@@ -7,30 +7,108 @@ using System.Numerics;
 using System.Globalization;
 
 
+Console.WriteLine("Enter row index: ");
+int rowi = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("Enter column index: ");
+int coli = Convert.ToInt32(Console.ReadLine());
+
+int rows = 4;
+int cols = 5;
+int[,] array = new int[rows,cols];
+
+Random rand = new Random();
+
+for (int i = 0; i < rows; i++)
+{
+      for (int j = 0; j < cols; j++)
+      {
+            array[i,j] = rand.Next(1,50);
+            Console.Write(array[i,j] + "\t");
+      }
+      Console.WriteLine();
+}
+
+if (rows <= rowi | cols <= coli)
+      {
+            Console.WriteLine("No position found");
+            return;
+      }
+
+for (int i = 0; i < rows; i++)
+{
+     for (int j = 0; j < cols; j++)
+      {
+            int number = array[rowi,coli];
+
+            
+
+            if (i == rowi && j == coli)
+            {
+                 Console.WriteLine(number);
+                 break;       
+            }
+            else
+            {
+                  continue;                
+            }
+            
+
+      }
+      
+      
+}
+
+
+
+
+
+/*
 int rows = new int();
 
 int cols = new int();
+
+int rowsLen = rows;
+int colsLen = cols;
+
 
 int[,] matrix = new int[rows, cols];
 Random rand = new Random();
 
 for (int i = 0; i < matrix.GetLength(0); i++)
 {
-      for (int j = 0; j < matrix.GetLength(1); j++)
-      {
-          matrix[i,j] = rand.Next(5,10);  
-      }
+      int numberr = rand.Next(1,10);
+      rows = numberr;
 }
 
-for (int i = 0; i < matrix.GetLength(0); i++)
+for (int j = 0; j < matrix.GetLength(1); j++)
 {
-      for (int j = 0; j < matrix.GetLength(1); j++)
+      int numberc = rand.Next(1,10);
+      cols = numberc;
+}
+
+
+for (int i = 0; i < rowsLen; i++)
+{
+      for (int j = 0; j < colsLen; j++)
       {
           Console.Write(matrix[i,j] + " ");
       }
        Console.WriteLine();
 }
-
+void PrintMatrix(int[,] matrix)
+      {
+            for (int i = 0; i < rowsLen; i++)
+            {
+                  for (int j = 0; j < colsLen; j++)
+                  {
+                        System.Console.Write(matrix[i, j] + "\t");
+                  }
+                        System.Console.WriteLine();
+            }
+      }
+      PrintMatrix(matrix);
+*/
 /*
 Console.WriteLine("Enter matrix rows: ");
 int rows = Convert.ToInt32(Console.ReadLine());
