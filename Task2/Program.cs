@@ -54,7 +54,7 @@ Console.WriteLine();
 for (int i = FirstStr, j = 0; j < cols; j++)
 {
       
-      tempmatrix[i,j] = matrix[i,j]; // забрал первую
+      tempmatrix[FirstStr,j] = matrix[i,j]; // забрал первую
 }
 
 for (int i = LastStr, j = 0; j < cols; j++)
@@ -66,7 +66,7 @@ for (int i = 0; i < rows; i++)
 {
      for (int j = 0; j < cols; j++)
       {
-            matrix[LastStr, j] = tempmatrix[i,j]; // последняя получает из первой, но нет
+            matrix[LastStr, j] = tempmatrix[FirstStr,j]; // последняя получает из первой
       }
 }
 
